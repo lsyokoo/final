@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Live Chat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="/socket.io/socket.io.js"></script>
+
+    <style>
+        #chat-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 100px auto; 
+            padding: 20px;
+            background-color: #2d2d2d; 
+            border: 5px solid #aca9ad;
+            
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+        }
+    
+        /* live chat itle */
+        #chat-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e8e8e8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    
+        /* messages area */
+        #messages {
+            border: 2px solid #aca9ad; 
+            background-color: #1e1e1e; 
+            color: #e8e8e8; 
+            padding: 15px;
+            height: 400px;
+            overflow-y: scroll; 
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px; 
+            box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+    
+        #message-form {
+            display: flex;
+            gap: 10px;
+        }
+    
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            color: #e8e8e8;
+            background-color: #1e1e1e; 
+            border: 2px solid #aca9ad;
+            border-radius: 5px;
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
+    
+        #message-input:focus {
+            box-shadow: 0px 0px 10px #946dad;
+        }
+    
+
+        #send-button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #946dad; 
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+    
+        #send-button:hover {
+            background-color: #7a5699; 
+            transform: scale(1.05);
+        }
+    
+        #send-button:active {
+            background-color: #5d3e72;
+            transform: scale(0.95);
+        }
+    </style>
+    
+</head>
+
+<body>
+    	<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">UndergroundScavengers</a></h1>
+				<nav id="nav">
+					<ul>
+                        <li><a href="item.html">Item</a></li>
+						<li><a href="chat.html">Chat</a></li>
+						<li><a href="event.html">Event</a></li>
+					</ul>
+				</nav>
+			</header>
+
+    <div id="chat-container">
+        <h2>Live Chat</h2>
+        <div id="messages"></div>
+        <form id="message-form">
+            <input type="text" id="message-input" placeholder="Type a message..." required />
+            <button type="submit" id="send-button">Send</button>
+        </form>
+
+        
+    </div>
+
+    <script>
+        const socket = io();
+    
+        const messages = document.getElementById('messages');
+        const messageForm = document.getElementById('message-form');
+        const messageInput = document.getElementById('message-input');
+    
+        // Load chat history
+        socket.on('chat history', (chatMessages) => {
+            chatMessages.forEach((data) => {
+                const messageElement = document.createElement('div');
+                messageElement.textContent = `${data.username}: ${data.message}`;
+                messages.appendChild(messageElement);
+            });
+            messages.scrollTop = messages.scrollHeight;
+        });
+    
+        // Display incoming messages
+        socket.on('chat message', (data) => {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = `${data.username}: ${data.message}`;
+            messages.appendChild(messageElement);
+            messages.scrollTop = messages.scrollHeight;
+        });
+    
+        // Handle message submission
+        messageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = messageInput.value;
+            const username = localStorage.getItem('username') || 'Anonymous';
+            socket.emit('chat message', { username, message });
+            messageInput.value = '';
+        });
+    </script>
+    
+
+    
+    	<!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="index.html">UndergroundCollective</a></li>
+            </ul>
+        </footer>
+
+</body>
+</html>
+
+
+

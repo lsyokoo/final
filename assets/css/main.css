@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+body {
+    border: 30px solid #81659e;
+    margin: 0;
+    background-image: url('/images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #e8e8e8;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2d2d2d;
+    border: 4px solid #aca9ad;
+}
+
+
+.item-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-wrapper {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.item-image {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.1);
+}
+
+.item-description {
+    display: none;
+    margin-top: 20px;
+    color: #e8e8e8;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Active -- show text description of the image */
+.image-wrapper.active + .item-description {
+    display: block;
+}
+
+
+/* Underground Scavengers Logo */
+header #logo {
+    margin: 0; 
+    font-size: 24px; 
+    font-weight: bold;
+}
+
+header #logo a {
+    color: #e8e8e8; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header #logo a:hover {
+    color: #946dad; 
+    text-shadow: 0px 0px 20px #f3f4c0;
+}
+
+/* menu  */
+header #nav ul {
+    display: flex;
+    gap: 35px; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+header #nav ul li a {
+    text-decoration: none;
+    font-size: 18px; 
+    color: #e8e8e8; 
+    transition: color 0.3s;
+}
+
+header #nav ul li a:hover {
+    color: #946dad; 
+    text-shadow: 0px 0px 15px #fcfe7e;
+}
+
+
+
+
+
+/* unify button and placeholder as well */
+input,
+button,
+textarea {
+    font-family: 'Pixelify Sans', sans-serif; 
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Pixelify Sans', sans-serif; 
+    color: #ccc; 
+    font-size: 14px; 
+}
+
+
+
+#username-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79.5vh;
+}
+
+#username-form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+
+    padding: 20px; 
+    border-radius: 8px; 
+}
+
+#username-form input {
+    width: 300px; 
+    padding: 10px; 
+    font-size: 16px;
+    border: 3px solid #aca9ad; 
+    border-radius: 5px; 
+    outline: none;
+    margin-bottom: 20px; 
+    background-color: #2d2d2d; 
+    color: #e8e8e8; 
+}
+
+#username-form input::placeholder {
+    color: #ccc; 
+}
+
+
+
+
+
+#footer {
+    text-align: center;
+    padding: 20px;
+}
+
+#footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+#footer ul li {
+    color: #e8e8e8;
+    font-size: 0.9em;
+}
+
+
+button {
+    width: 150px; 
+    padding: 10px;
+    font-size: 16px;
+    color: #fff; 
+    background-color: #946dad; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s; 
+}
+
+
+button:hover,
+#username-form button:hover {
+    background-color: #7a5699; 
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+button:active,
+#username-form button:active {
+    background-color: #5d3e72;
+    transform: scale(0.95); 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+

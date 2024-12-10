@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Events</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="/socket.io/socket.io.js"></script>
+    <style> .container {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        min-height: 100vh;
+    }</style>
+</head>
+
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1 id="logo"><a href="index.html">UndergroundScavengers</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="item.html">Item</a></li>
+						<li><a href="chat.html">Chat</a></li>
+						<li><a href="event.html">Event</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+              
+                    <h2>---RSVP FOR THE UPCOMING EVENTS!---RSVP FOR THE UPCOMING EVENTS!---RSVP FOR THE UPCOMING EVENTS!---RSVP FOR THE UPCOMING EVENTS!---</h2>
+                    
+               
+                    <div class="container">
+                <!-- Event 1 -->
+                <div class="row gtr-150">
+                    <div class="col-8 col-12-medium">
+                        <section id="content">
+                           
+                            <br><br><h2>Event:Repair Workshop</h2>
+                            <br><h3>Description:</h3> 
+								<p>Join us for a hands-on workshop designed to teach residents the skills needed to repair and restore discarded technologies and essential equipment. Whether it's fixing an old generator, restoring broken communication devices, or repurposing outdated machinery, this workshop equips participants with valuable survival skills. Our experienced instructors will guide you through the repair process step-by-step, ensuring everyone can participate regardless of skill level.</p>
+                                <br><h3>Highlights:</h3> 
+								<p>Learn basic and advanced repair techniques.
+                                <br>Collaborate with neighbors to rebuild community infrastructure.
+                                <br> Access to shared tools and expert guidance..</p>
+                        </section>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <section id="sidebar">
+                            <section>
+                                <br><h3>When & Where</h3>
+                                <p>Time: Saturday, December 16th, 2124 | 3:00 PM - 6:00 PM
+                                    <br>Location: Workshop Hall, Sector B2
+                                    <br>Limited spots available! RSVP by December 14th.</p>
+
+                                <footer>
+                                    <ul class="actions">
+                                        <li><button id="rsvp-submit-1" class="button">RSVP</button></li>
+                                    </ul>
+                                    <p id="rsvp-feedback-1" style="margin-top: 1em; font-size: 1em;"></p>
+                                    <h4>Registered People:</h4>
+                                    <ul id="rsvp-list-1" style="list-style-type: none; padding: 0;"></ul>
+                                </footer>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="row gtr-150">
+                    <div class="col-8 col-12-medium">
+                        <section id="content">
+                            <br><br><br><br><br><br><br><h2>Event:Fungus Seminar</h2>
+                            <br><h3>Description:</h3> 
+								<p>Discover the limitless potential of fungus in our interactive seminar! From cultivating fungus for sustainable furniture to using it as a nutritious food source, this session will introduce innovative techniques for making the most of this versatile resource. Perfect for beginners and enthusiasts alike, the seminar includes live demonstrations, creative crafting sessions, and a tasting experience featuring fungus-based dishes.</p>
+                                <br><h3>Highlights:</h3> 
+								<p>Learn to grow and harvest edible fungus at home.
+                                <br>Craft functional items using fungal materials.
+                                <br>Take home your own starter fungus cultivation kit.</p>
+                        </section>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <section id="sidebar">
+                            <section>
+                                <br><h3>When & Where</h3>
+                                <p>Time: Tuesday, December 11th, 2124 | 2:00 PM - 5:00 PM
+                                    <br>Location: Green Chamber, Central Core
+                                    <br>Sign up online to secure your spot and claim your starter kit. RSVP by December 8th.</p>
+
+                                <footer>
+                                    <ul class="actions">
+                                        <li><button id="rsvp-submit-2" class="button">RSVP</button></li>
+                                    </ul>
+                                    <p id="rsvp-feedback-2" style="margin-top: 1em; font-size: 1em;"></p>
+                                    <h4>Registered People:</h4>
+                                    <ul id="rsvp-list-2" style="list-style-type: none; padding: 0;"></ul>
+                                </footer>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="row gtr-150">
+                    <div class="col-8 col-12-medium">
+                        <section id="content">
+                            <br><br><br><br><br><br><br><br><h2>Event:Resource Bartering Fair</h2>
+                            <br><h3>Description:</h3> 
+								<p>Join our weekly bartering fair where residents come together to exchange surplus items, handcrafted goods, and repurposed tools. Whether you're looking for a spare part, unique artwork, or a rare resource, this is the perfect opportunity to trade what you have for what you need. The fair fosters community connection and reduces waste, with designated "free zones" where shared resources are distributed by the Collective.</p>
+                                <br><h3>Highlights:</h3> 
+								<p>Bring your items to trade or donate.
+                                <br>Discover new and creative uses for everyday materials.
+                                <br>Engage with neighbors and strengthen community bonds.</p>
+                        </section>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <section id="sidebar">
+                            <section>
+                                <br><h3>When & Where</h3>
+                                <p>Time: Friday, December 5th, 2124 | 4:00 PM - 7:00 PM
+                                    <br>Location: Community Square, Lower Passage 7
+                                    <br>Sign up online to secure your spot. RSVP is not mandatory.</p>
+                                    
+                                <footer>
+                                    <ul class="actions">
+                                        <li><button id="rsvp-submit-3" class="button">RSVP</button></li>
+                                    </ul>
+                                    <p id="rsvp-feedback-3" style="margin-top: 1em; font-size: 1em;"></p>
+                                    <h4>Registered People:</h4>
+                                    <ul id="rsvp-list-3" style="list-style-type: none; padding: 0;"></ul>
+                                </footer>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="index.html">UndergroundCollective</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+	<script>
+		const socket = io();
+	
+		// Fetch current RSVP list from server and update UI
+		async function loadRSVP(eventId, listId) {
+			try {
+				const response = await fetch('/api/rsvp');
+				const rsvpData = await response.json();
+				const list = document.getElementById(listId);
+	
+				// Format and display the list as a comma-separated string
+				const eventRSVPs = rsvpData[eventId] || [];
+				list.textContent = eventRSVPs.join(', ');
+			} catch (error) {
+				console.error('Failed to load RSVP data:', error);
+			}
+		}
+	
+		// Setup RSVP buttons
+		function setupRSVP(buttonId, feedbackId, listId, eventId) {
+			const button = document.getElementById(buttonId);
+			const feedback = document.getElementById(feedbackId);
+			const list = document.getElementById(listId);
+	
+			// Load initial RSVP data
+			loadRSVP(eventId, listId);
+	
+			// Listen for RSVP updates
+			socket.on('rsvp update', (rsvpData) => {
+				const eventRSVPs = rsvpData[eventId] || [];
+				list.textContent = eventRSVPs.join(', '); // Update as comma-separated
+			});
+	
+			button.addEventListener('click', () => {
+				const username = localStorage.getItem('username') || 'Anonymous';
+	
+				// Emit RSVP event
+				socket.emit('rsvp', { eventId, username });
+				feedback.textContent = 'RSVP successful!';
+			});
+		}
+	
+		// RSVP for all events
+		setupRSVP('rsvp-submit-1', 'rsvp-feedback-1', 'rsvp-list-1', 'event1');
+		setupRSVP('rsvp-submit-2', 'rsvp-feedback-2', 'rsvp-list-2', 'event2');
+		setupRSVP('rsvp-submit-3', 'rsvp-feedback-3', 'rsvp-list-3', 'event3');
+	</script>
+	
+	
+</body>
+</html>
+
+
+
+
